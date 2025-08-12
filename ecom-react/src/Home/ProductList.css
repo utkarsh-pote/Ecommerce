@@ -1,0 +1,82 @@
+/* ProductsList.css */
+.products-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .product-card {
+    background-color: white;
+    border: 1px solid #dadada;
+    border-radius: 8px;
+    padding: 16px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-name {
+    font-size: 0.2em;
+    margin: 10px 0;
+  }
+  
+  .product-price {
+    color: #2a9d8f;
+    font-weight: bold;
+  }
+  
+  .product-category {
+    font-size: 0.9em;
+    color: #777;
+  }
+  
+  .product-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .product-image {
+    width: 50px;
+    height: 50px;
+    display: block; /* or inline-block */
+  }
+  
+  /* .product-image {
+    height: 150px;
+    
+    border-radius: 8px;
+    margin-bottom: 20px;
+  } */
+  
+  .product-name {
+    font-size: 0.2em;
+    margin: 10px 0;
+  }
+  
+  .product-price {
+    color: #2a9d8f;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  
+  .product-description,
+  .product-category,
+  .product-subCategory,
+  .product-gender,
+  .product-quantity,
+  .product-color {
+    margin: 5px 0;
+  }
+ 
+  .product-card a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color from parent */
+  }
+  
+  .product-card a:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+    color: #333; /* Change color on hover if needed */
+  }

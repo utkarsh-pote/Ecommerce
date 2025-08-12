@@ -1,0 +1,61 @@
+CREATE TABLE Products_2147 (
+    PRODUCT_ID   NUMBER(19) PRIMARY KEY,
+    CATEGORY     VARCHAR2(255 CHAR),
+    COLOR        VARCHAR2(255 CHAR),
+    DESCRIPTION  VARCHAR2(1024),
+    DISCOUNT     FLOAT(53),
+    GENDER       VARCHAR2(255 CHAR),
+    IMAGE_URL    VARCHAR2(255 CHAR),
+    NAME         VARCHAR2(255 CHAR),
+    PRICE        FLOAT(53),
+    QUANTITY     NUMBER(10),
+    SUB_CATEGORY VARCHAR2(255 CHAR)
+);
+/
+INSERT ALL
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY)
+    VALUES (1, 'Traditional', 'Brown', 'A kurta is a traditional Indian garment, typically worn by both men and women. It is comfortable and stylish.', 17, 'Male', 'image_21.jpg', 'Cotton Silk Kurta', 1510, 10, 'Kurta') 
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY)
+    VALUES (2, 'Traditional', 'Golden', 'The Navaratri Design Sherwani is a luxurious, festive outfit ideal for the Navaratri celebration.', 0, 'Male', 'image_4.jpg', 'Nawaratri Design Sherwani', 2999.9, 2, 'Sherwani')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (3, 'Casual', 'Golden', 'Leriya Fashion Crochet Regular Fit Shirt for Men blends unique crochet detailing with style.', 22, 'Male', 'image_3.jpg', 'Leriya Fashion Regular Fit Shirt For Men', 620, 8, 'Shirt')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY)
+    VALUES (4, 'Traditional', 'Yellow', 'A Handwork Kurta showcases exquisite craftsmanship with detailed embroidery and stylish design.', 10, 'Female', 'image_5.jpg', 'Mustard Handwork Kurta', 2309.9, 4, 'Kurta')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (5, 'Sports', 'Black', 'Sports Gym Workout Running Shorts for Women are designed for optimal performance.', 0, 'Female', 'image_2.jpg', 'Sports Gym Workout Running Shorts for Women', 846, 19, 'Shorts')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (6, 'Official', 'Green', 'A men''s shirt is a versatile wardrobe staple, offering a range of styles from casual to formal.', 15, 'Male', 'image_6.jpg', 'Mens Shirt', 2034.9, 3, 'Shirt')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (7, 'Official', 'Blue', 'A Cotton Plati Shirt is a comfortable and stylish garment made from breathable cotton fabric.', 5, 'Male', 'image_7.jpg', 'Cotton Plati Shirt', 3247.8, 2, 'Shirt')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (8, 'Casual', 'Blue', 'A Mark & Spencer T-Shirt combines quality with style, offering comfortable and trendy wear.', 20, 'Unisex', 'image_8.jpg', 'Mark & Spensor T-Shirt', 920, 2, 'Shirt')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (9, 'Casual', 'Brown', 'A Cotton T-Shirt is a classic wardrobe essential, known for its breathability and versatility.', 20, 'Female', 'image_9.jpg', 'Cotton T-Shirt', 780, 8, 'Shirt')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (10, 'Sports', 'Brown', 'Onem Shoes offer a blend of comfort and style with their modern designs and high durability.', 20, 'Male', 'image_10.jpg', 'Onem Shoes', 830, 15, 'Shoes')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (11, 'Sports', 'Blue', 'Nike Shoes are renowned for their innovative design, comfort, and performance.', 0, 'Male', 'image_11.jpg', 'Nike Shoes', 1670, 3, 'Shoes')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (12, 'Traditional', 'Brown', 'Cole Men''s Shoes blend classic design with contemporary style, offering a sophisticated look.', 29, 'Male', 'image_12.jpg', 'Cole Mens Shoes', 1840, 18, 'Shoes')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (13, 'Casual', 'Black', 'The Crocs Unisex-Adult Bayaband features a sleek, modern design with a comfortable fit.', 0, 'Unisex', 'image_13.jpg', 'Crocs unisex-adult Bayaband', 1420, 17, 'Shoes')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (14, 'Casual', 'White', 'The BlissClub Women’s Straight Track Pant combines style and comfort with its relaxed fit.', 0, 'Female', 'image_14.jpg', 'BlissClub Women Straight Track Pant', 1699.9, 12, 'Pants')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (15, 'Official', 'White', 'Men''s trousers offer a versatile and stylish option for both professional and casual wear.', 16, 'Male', 'image_15.jpg', 'Men''s Trousers for Men', 1800, 8, 'Pants')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (16, 'Casual', 'Pink', 'Women’s Relaxed Fit Patiala Pants offer a blend of traditional elegance and modern comfort.', 0, 'Female', 'image_16.jpg', 'Women Relaxed Fit Patiala Pants', 1399.9, 9, 'Pants')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (17, 'Traditional', 'Golden', 'Ukal Women’s Fashion Rayon Bottom Wear Dhoti Pyjama Pants blend traditional charm with style.', 18, 'Female', 'image_17.jpg', 'Ukal Women Fashion Dhoti Pyjama Pant', 1620, 3, 'Pants')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (18, 'Casual', 'White', 'Lyra Women’s Pants combine sleek, modern design with comfort and versatility.', 0, 'Female', 'image_18.jpg', 'Lyra Women''s Pants', 499.9, 6, 'Pants')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (19, 'Casual', 'Blue', 'Ben Martin Men''s Regular Fit Knee-Length Casual Wear Denim Shorts are perfect for casual outings.', 16, 'Male', 'image_19.jpg', 'Ben Martin Men''s Regular Denim Shorts', 480.9, 14, 'Shorts')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (20, 'Casual', 'Golden', 'U.S. POLO ASSN. Men’s Shorts are crafted for both style and comfort.', 0, 'Male', 'image_20.jpg', 'U.S. POLO ASSN. Men Shorts', 899.9, 12, 'Shorts')
+    INTO Products_2147 (PRODUCT_ID, CATEGORY, COLOR, DESCRIPTION, DISCOUNT, GENDER, IMAGE_URL, NAME, PRICE, QUANTITY, SUB_CATEGORY) 
+    VALUES (21, 'Sports', 'Black', 'Lothric Men''s Shorts are designed for a blend of comfort and style.', 10, 'Male', 'image_1.jpg', 'LOTHRIC MEN''S SHORTS', 1249.9, 11, 'Shorts')
+SELECT * FROM dual;
+/
+COMMIT;
+/

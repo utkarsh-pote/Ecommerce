@@ -1,0 +1,18 @@
+CREATE TABLE address_2147 (
+    ADD_ID NUMBER PRIMARY KEY,
+    CITY VARCHAR2(100),
+    STATE VARCHAR2(100),
+    STREET VARCHAR2(255),
+    USER_ID NUMBER,
+    ZIP_CODE VARCHAR2(10),
+    CONSTRAINT fk_user FOREIGN KEY (USER_ID) REFERENCES pro_users_210(ID)
+);
+/
+INSERT ALL
+    INTO address_2147 (ADD_ID, CITY, STATE, STREET, USER_ID, ZIP_CODE)
+    VALUES (1, 'Pune', 'Maharashtra', '123 Main Street', 1, '411001')
+    INTO address_2147 (ADD_ID, CITY, STATE, STREET, USER_ID, ZIP_CODE)
+    VALUES (2, 'Mumbai', 'Maharashtra', '456 High Street', 2, '400001')
+SELECT * FROM dual;
+/
+commit
