@@ -23,7 +23,7 @@ function Navbar({ productId, onDelete }) {
         </div>
 
         <div className="navbar-right">
-          <Link to="/Products/login" className="navbar-item">Signup/Login</Link>
+          <Link to="/Admin/Profile" className="navbar-item">Profile</Link>
         </div>
 
       </div>

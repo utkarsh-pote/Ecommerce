@@ -15,13 +15,9 @@ public class UserService {
     @Autowired
     UserRepository repo;
 
-
     //For login
-    public User findByEmialAndPassword(String email, String password) {
-        Optional<User> user = repo.findByEmailAndPassword(email, password);
-        if(user.isPresent())
-            return user.get();
-        return null;
+    public User findByEmailAndPassword(String email, String password) {
+        return repo.findByEmailIgnoreCaseAndPassword(email.trim(), password.trim()).orElse(null);
     }
 
     //CRUD of users
@@ -38,6 +34,10 @@ public class UserService {
         if(user.isPresent())
             return user.get();
         return null;
+    }
+
+    public User getUserByEmail(String email) {
+        return repo.findByEmail(email).orElse(null);
     }
 
     public String deleteById(Long id) {

@@ -24,7 +24,7 @@ const ProductList = () => {
 
   return (
     <div>
-      <NavBar /> <br></br>
+      <NavBar type="home" /> <br></br>
     <div className="products-list">
       {/* <img src={`http://localhost:8080/ecom/image/image_4.jpg`} alt='Description'
         style={{ width: '50px', height: '50px' }}/> */}

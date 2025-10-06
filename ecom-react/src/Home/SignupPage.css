@@ -1,0 +1,172 @@
+/* ================================
+   Signup Page Container
+================================ */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* ensure full height for page */
+}
+
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* align card to top */
+  background-color: #f5f6fa;
+  padding: 10px 20px 10px 20px; /* reduced top and bottom padding */
+  min-height: auto; /* container height adjusts to content */
+  box-sizing: border-box;
+}
+
+/* ================================
+   Signup Card
+================================ */
+.signup-card {
+  background-color: #fff;
+  padding: 30px 30px 20px 30px; /* reduced bottom padding */
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  width: 450px;
+  max-width: 95%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* ================================
+   Headings & Subtitle
+================================ */
+.signup-card h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+}
+
+.signup-card p {
+  margin: 8px 0 15px; /* reduced bottom margin */
+  font-size: 14px;
+  color: #555;
+}
+
+/* ================================
+   Name Fields in one line
+================================ */
+.name-fields {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.name-fields input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  background: #f8f8f8;
+  transition: all 0.2s ease;
+}
+
+.name-fields input:focus {
+  border-color: #6c63ff;
+  background: #fff;
+}
+
+/* ================================
+   Input Fields
+================================ */
+.signup-form input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  background: #f8f8f8;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.signup-form input:focus {
+  border-color: #6c63ff;
+  background: #fff;
+}
+
+/* ================================
+   Gender select - fancy modern style
+================================ */
+.signup-form select {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333;
+  font-weight: 500;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #6c63ff 50%), 
+                    linear-gradient(135deg, #6c63ff 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(50% - 3px), calc(100% - 15px) calc(50% - 3px);
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+}
+
+.signup-form select:focus {
+  border-color: #6c63ff;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.2);
+}
+
+.signup-form select:hover {
+  border-color: #6c63ff;
+}
+
+.signup-form select option[value=""] {
+  color: #aaa;
+}
+
+/* ================================
+   Buttons
+================================ */
+.signup-form button {
+  width: 100%;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+  background-color: #6c63ff;
+  color: #fff;
+  font-weight: 500;
+}
+
+.signup-form button:hover {
+  background-color: #5848c2;
+}
+
+/* ================================
+   Messages & Links
+================================ */
+.message {
+  color: green;
+  text-align: center;
+  margin: 5px 0; /* reduced margin */
+}
+
+.login-text {
+  margin-top: 10px; /* reduced margin */
+  font-size: 14px;
+  color: #555;
+}
+
+.login-text a {
+  color: #6c63ff;
+}

@@ -47,6 +47,23 @@ public class UserController {
         return new ResponseEntity<>(users, HttpStatus.OK); // 200 OK
     }
 
+    @GetMapping("/login")
+    public ResponseEntity<User> login(@RequestParam String email, @RequestParam String password) {
+        User user = serv.findByEmailAndPassword(email, password);
+        if (user == null) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    // Get profile by email
+    @GetMapping("/profile")
+    public ResponseEntity<User> getProfile(@RequestParam String email) {
+        User user = serv.getUserByEmail(email);
+        if (user == null) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
     @GetMapping("/user/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") Long id) {
         User user = serv.getUserById(id);
@@ -56,14 +73,6 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.OK); // 200 OK
     }
 
-    @GetMapping("/login")
-    public ResponseEntity<User> getByEmailAndPassword(@RequestParam String email, @RequestParam String password) {
-        User user = serv.findByEmialAndPassword(email, password);
-        if (user == null) {
-            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED); // 401 Unauthorized
-        }
-        return new ResponseEntity<>(user, HttpStatus.OK); // 200 OK
-    }
 
     @DeleteMapping("/user/{id}")
     public String deleteById(@PathVariable("id") Long id) {
