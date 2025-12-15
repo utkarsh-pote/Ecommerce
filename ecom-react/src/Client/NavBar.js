@@ -1,15 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from '../utils/navigation';
 import './NavBar.css';
 
 function NavBar({ productId, onDelete }) {
+  const navigate = useNavigate();
+
+  const handleNavClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
 
         <div className="navbar-left">
-          <Link to="/" className="navbar-brand">Home</Link>
-          <Link to="/Products/" className="navbar-item">Products</Link>
+          <button onClick={() => handleNavClick("/")} className="navbar-brand">Home</button>
+          <button onClick={() => handleNavClick("/Products")} className="navbar-item">Products</button>
         </div>
 
         <div className="navbar-center">
@@ -20,7 +26,7 @@ function NavBar({ productId, onDelete }) {
         </div>
 
         <div className="navbar-right">
-          <Link to="/Client/Profile" className="navbar-item">Profile</Link>
+          <button onClick={() => handleNavClick("/Client/Profile")} className="navbar-item">Profile</button>
         </div>
 
       </div>

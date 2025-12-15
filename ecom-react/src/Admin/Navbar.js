@@ -1,18 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from '../utils/navigation';
 import './Navbar.css';
 
 function Navbar({ productId, onDelete }) {
+  const navigate = useNavigate();
+
+  const handleNavClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
 
         <div className="navbar-left">
-          <Link to="/" className="navbar-brand">Home</Link>
-          <Link to="/Products/" className="navbar-item">Products</Link>
-          <Link to="/Products/add" className="navbar-item">Add Product</Link>
-          <Link to={`/Products/update/${productId}`} className="navbar-item">Update Product</Link>
-            <a href="/Products/" onClick={onDelete} className="navbar-item delete-button">Delete Product</a>
+          <button onClick={() => handleNavClick("/")} className="navbar-brand">Home</button>
+          <button onClick={() => handleNavClick("/Products")} className="navbar-item">Products</button>
+          <button onClick={() => handleNavClick("/Products/add")} className="navbar-item">Add Product</button>
+          <button onClick={() => handleNavClick(`/Products/update/${productId}`)} className="navbar-item">Update Product</button>
+          <button onClick={onDelete} className="navbar-item delete-button">Delete Product</button>
         </div>
 
         <div className="navbar-center">
@@ -23,7 +29,7 @@ function Navbar({ productId, onDelete }) {
         </div>
 
         <div className="navbar-right">
-          <Link to="/Admin/Profile" className="navbar-item">Profile</Link>
+          <button onClick={() => handleNavClick("/Admin/Profile")} className="navbar-item">Profile</button>
         </div>
 
       </div>

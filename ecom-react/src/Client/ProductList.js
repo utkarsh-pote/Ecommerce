@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ProductList.css'; // Import your CSS file
-import { Link } from 'react-router-dom';
-import NavBar from './NavBar';
+import { useNavigate } from '../utils/navigation';
+import NavBar from '../Home/NavBar';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);

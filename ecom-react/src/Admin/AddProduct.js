@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from '../utils/navigation';
 import './AddProduct.css';
-import Navbar from './Navbar.js';
+import NavBar from '../Home/NavBar';
 
 const AddProduct = () => {
   const [product, setProduct] = useState({
@@ -15,11 +15,12 @@ const AddProduct = () => {
     imageUrl: '',
     description: '',
     category: '',
-    subCategory: '',
+    subCategory: ''
   });
 
   const [error, setError] = useState('');
-  //const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setProduct({
@@ -31,18 +32,22 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
+      setError('');
       await axios.post('http://localhost:8080/ecom/products/add', product);
       alert('Product added successfully!');
-      //navigate(`/${id}`);
+      navigate('/Products');
     } catch (error) {
       console.error('There was an error adding the product!', error);
       setError('Failed to add product. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div>
-      <Navbar></Navbar>
+      <NavBar />
     <div className="add-product-container">
       <form className="add-product-form" onSubmit={handleSubmit}>
         <h2>Add New Product</h2>
@@ -56,6 +61,7 @@ const AddProduct = () => {
             value={product.name}
             onChange={handleChange}
             required
+            disabled={loading}
             className="form-control"
           />
         </div>
@@ -63,11 +69,13 @@ const AddProduct = () => {
           <label htmlFor="price">Price</label>
           <input
             type="number"
+            step="0.01"
             name="price"
             id="price"
             value={product.price}
             onChange={handleChange}
             required
+            disabled={loading}
             className="form-control"
           />
         </div>
@@ -79,7 +87,7 @@ const AddProduct = () => {
             id="discount"
             value={product.discount}
             onChange={handleChange}
-            required
+            disabled={loading}
             className="form-control"
           />
         </div>
@@ -91,6 +99,7 @@ const AddProduct = () => {
             value={product.gender}
             onChange={handleChange}
             required
+            disabled={loading}
             className="form-control"
           >
             <option value="">Select Gender</option>
@@ -108,6 +117,7 @@ const AddProduct = () => {
             value={product.quantity}
             onChange={handleChange}
             required
+            disabled={loading}
             className="form-control"
           />
         </div>
@@ -119,7 +129,7 @@ const AddProduct = () => {
             id="color"
             value={product.color}
             onChange={handleChange}
-            required
+            disabled={loading}
             className="form-control"
           />
         </div>
@@ -131,8 +141,8 @@ const AddProduct = () => {
             id="imageUrl"
             value={product.imageUrl}
             onChange={handleChange}
-            required
             className="form-control"
+            disabled={loading}
           />
         </div>
         <div className="form-group">
@@ -143,6 +153,7 @@ const AddProduct = () => {
             value={product.description}
             onChange={handleChange}
             required
+            disabled={loading}
             className="form-control"
           />
         </div>
@@ -155,6 +166,7 @@ const AddProduct = () => {
             value={product.category}
             onChange={handleChange}
             required
+            disabled={loading}
             className="form-control"
           />
         </div>
@@ -166,11 +178,13 @@ const AddProduct = () => {
             id="subCategory"
             value={product.subCategory}
             onChange={handleChange}
-            required
+            disabled={loading}
             className="form-control"
           />
         </div>
-        <button type="submit" className="add-product-btn">Add Product</button>
+        <button type="submit" className="add-product-btn" disabled={loading}>
+          {loading ? 'Adding Product...' : 'Add Product'}
+        </button>
       </form>
     </div>
     </div>

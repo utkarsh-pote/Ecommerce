@@ -1,50 +1,77 @@
-// src/Client/NavBar.js
+// src/Home/NavBar.js - Unified NavBar Component
 import React from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "../utils/navigation";
+import { NavigationContext } from "../App";
+import { useContext } from "react";
 import "./NavBar.css";
 
 function NavBar() {
   const navigate = useNavigate();
-  const location = useLocation();
+  const context = useContext(NavigationContext);
+  const currentPath = context.currentPath;
+  
   const email = localStorage.getItem("email");
   const role = localStorage.getItem("role");
 
   const handleLogout = () => {
     localStorage.removeItem("email");
     localStorage.removeItem("role");
+    localStorage.removeItem("userId");
     navigate("/login");
   };
 
+  const handleNavClick = (path) => {
+    navigate(path);
+  };
+
   // Detect if current page is Product List page
-  const isProductListPage = location.pathname === "/Products";
+  const isProductListPage = currentPath === "/Products";
 
   // Detect if current page is Product Detail page
-  const productDetailMatch = location.pathname.match(/^\/Products\/(\d+)$/);
+  const productDetailMatch = currentPath.match(/^\/Products\/(\d+)$/);
   const currentProductId = productDetailMatch ? productDetailMatch[1] : null;
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
 
-        {/* Left Side */}
+        {/* Left Side - Navigation Links */}
         <div className="navbar-left">
-          <Link to="/" className="navbar-brand">Home</Link>
-          <Link to="/Products" className="navbar-item">Products</Link>
+          <button onClick={() => handleNavClick("/")} className="navbar-brand">
+            🏠 Home
+          </button>
+          <button onClick={() => handleNavClick("/Products")} className="navbar-item">
+            📦 Products
+          </button>
 
-          {/* Admin Only Links */}
+          {/* Admin Only Links - Always show for admin */}
           {role === "admin" && (
             <>
-              {isProductListPage && (
-                <Link to="/Products/add" className="navbar-item">Add Product</Link>
-              )}
+              <button 
+                onClick={() => handleNavClick("/Products/add")} 
+                className="navbar-item admin-item"
+                title="Add new product"
+              >
+                ➕ Add Product
+              </button>
+              
+              {/* Show Update/Delete only if on product detail page */}
               {currentProductId && (
                 <>
-                  <Link to={`/Products/update/${currentProductId}`} className="navbar-item">
-                    Update Product
-                  </Link>
-                  <Link to={`/Products/delete/${currentProductId}`} className="navbar-item">
-                    Delete Product
-                  </Link>
+                  <button 
+                    onClick={() => handleNavClick(`/Products/update/${currentProductId}`)} 
+                    className="navbar-item admin-item"
+                    title="Update current product"
+                  >
+                    ✏️ Update Product
+                  </button>
+                  <button 
+                    onClick={() => handleNavClick(`/Products/delete/${currentProductId}`)} 
+                    className="navbar-item admin-item delete-item"
+                    title="Delete current product"
+                  >
+                    🗑️ Delete Product
+                  </button>
                 </>
               )}
             </>
@@ -54,26 +81,48 @@ function NavBar() {
         {/* Center - Search Bar */}
         <div className="navbar-center">
           <div className="navbar-search">
-            <input type="text" className="search-bar" placeholder="Search..." />
-            <button type="button">Search</button>
+            <input 
+              type="text" 
+              className="search-bar" 
+              placeholder="Search products..." 
+            />
+            <button type="button" className="search-btn">
+              🔍 Search
+            </button>
           </div>
         </div>
 
-        {/* Right Side */}
+        {/* Right Side - User Actions */}
         <div className="navbar-right">
-          <Link to="/orders" className="navbar-item">Orders</Link>
-          <Link to="/cart" className="navbar-item">Cart</Link>
-          {!email ? (
-            <Link to="/login" className="navbar-item">Signup/Login</Link>
-          ) : (
+          {/* Show Orders and Cart only for logged in users (not admin) */}
+          {email && role !== "admin" && (
             <>
-              <Link
-                to={role === "admin" ? "/Admin/Profile" : "/Client/Profile"}
-                className="navbar-item"
-              >
-                Profile
-              </Link>
+              <button onClick={() => handleNavClick("/orders")} className="navbar-item">
+                📋 Orders
+              </button>
+              <button onClick={() => handleNavClick("/cart")} className="navbar-item">
+                🛒 Cart
+              </button>
             </>
+          )}
+          
+          {!email ? (
+            <>
+              <button onClick={() => handleNavClick("/login")} className="navbar-item login-btn">
+                🔐 Login
+              </button>
+              <button onClick={() => handleNavClick("/signup")} className="navbar-item signup-btn">
+                ✨ Sign Up
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={() => handleNavClick(role === "admin" ? "/Admin/Profile" : "/Client/Profile")}
+              className="navbar-item profile-btn"
+              title={`${role === "admin" ? "Admin" : "User"} Profile`}
+            >
+              👤 {role === "admin" ? "Admin" : "Profile"}
+            </button>
           )}
         </div>
 
